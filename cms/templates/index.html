@@ -122,7 +122,7 @@
                         <!-- logo area -->
                         <a class="navbar-brand" href="#home">
                             <!-- logo image -->
-                            <img class="img-responsive" src="img/logo/logo.png" alt="" />
+                            <img class="img-responsive" src="{% static 'img/logo/logo.png' %}" alt="" />
                         </a>
                     </div>
 
@@ -230,70 +230,19 @@
                                         class="fa fa-play"></i>&nbsp; Play Now</a>
                             </div>
                         </div>
+
                         <div class="col-md-6 col-sm-6">
                             <!-- play list -->
                             <div class="playlist-content">
                                 <ul class="list-unstyled">
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track One</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track Two</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track Three</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track Four</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
+                                    {% for song in all_songs %}
+                                    <video width="320" height="240" controls>
+                                        <source src="/media/{{song.song}}" type="video/mp4">
+                                        <source src="movie.ogg" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    {% endfor %}
+
                                     <li class="playlist-number">
                                         <!-- song information -->
                                         <div class="song-info">
@@ -309,51 +258,10 @@
                                         </div>
                                         <div class="clearfix"></div>
                                     </li>
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track Six</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track Seven</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="playlist-number">
-                                        <!-- song information -->
-                                        <div class="song-info">
-                                            <!-- song title -->
-                                            <h4>Melodi Song Track Eight</h4>
-                                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock
-                                                &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                                        </div>
-                                        <!-- music icon -->
-                                        <div class="music-icon">
-                                            <a href="#"><i class="fa fa-play"></i></a>
-                                            <a href="#"><i class="fa fa-pause"></i></a>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
+
+
+
+
                                 </ul>
                             </div>
                         </div>
@@ -1208,7 +1116,6 @@
             </div>
         </div>
         <!-- contact end -->
-
         <!-- footer -->
         <footer>
             <div class="container">
@@ -1225,9 +1132,6 @@
         </footer>
         <!-- footer end -->
 
-        <!-- Scroll to top -->
-        <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
-
     </div>
 
     <!-- Javascript files -->
@@ -1236,17 +1140,17 @@
     <!-- Bootstrap JS -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- WayPoints JS -->
-    <script src="js/waypoints.min.js"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
     <!-- Include js plugin -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <!-- One Page Nav -->
-    <script src="js/jquery.nav.js"></script>
+    <script src="{% static 'js/jquery.nav.js' %}"></script>
     <!-- Respond JS for IE8 -->
-    <script src="js/respond.min.js"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
     <!-- HTML5 Support for IE -->
-    <script src="js/html5shiv.js"></script>
+    <script src="{% static 'js/html5shiv.js' %}"></script>
     <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>

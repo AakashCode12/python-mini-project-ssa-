@@ -4,28 +4,28 @@ from django.db import models
 
 
 class Category (models.Model):
-    category_name = models.CharField()
+    category_name = models.CharField(max_length=50, default="")
 
     def __str__(self):
         return self.category_name
 
 
 class Language (models.Model):
-    language_name = models.CharField(max_length=50)
+    language_name = models.CharField(max_length=50, default="")
 
     def __str__(self):
         return self.language_name
 
 
 class Artist (models.Model):
-    name = models.CharField(max_lenght=50)
+    name = models.CharField(max_length=50, default="")
 
     def __str__(self):
         return self.name
 
 
-class Songs (models.Model):
-    name = models.CharField(max_length=100)
+class Song (models.Model):
+    name = models.CharField(max_length=50, default="")
     song = models.FileField(upload_to='songs/')
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, default="")
