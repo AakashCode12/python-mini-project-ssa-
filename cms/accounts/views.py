@@ -1,8 +1,6 @@
 
 from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
-# from django.contrib import messages
 from .models import Song, Artist, Category, Language
-# import collections
 
 
 def index(request):
