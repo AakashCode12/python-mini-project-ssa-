@@ -1,4 +1,6 @@
-/*todo Navbar contents from here*/
+/**================================================================
+*?? Navbar Starts Here
+**==================================================================*/
 .navbar-nav li {
   padding: 0 10px;
 }
@@ -8,25 +10,32 @@
   font-size: large;
   font-weight: 600;
 }
+.navbar-nav li a:hover {
+  text-align: right;
+  color: rgb(189, 189, 189);
+  font-size: large;
+  font-weight: 600;
+}
 .navbar {
   background: -webkit-linear-gradient(right, #000000, #313131);
 }
 #leftlogo img {
   width: 63.48px;
-  height: 51.24px;
+  height: 63.48px;
 }
 @media only screen and (max-width: 600px) {
   #leftlogo img {
     width: 52.9px;
-    height: 47.4px;
+    height: 52.9px;
   }
 }
 .navbar-toggler {
-  background-color: #0ee3ff !important;
-  border: none !important;
+  background-color: #000000 !important;
+  border-color: white !important;
 }
 #navbar-toggler-icon {
-  color: black;
+  color: rgb(255, 255, 255);
+  border-color: white !important;
 }
 .col-sm-2 svg {
   align-items: center;
@@ -54,6 +63,7 @@ a.left:hover:before {
 a.highlight {
   color: white !important;
 }
-/*
- ! Navbar contents end from here
-*/
+
+/**================================================================
+* Navbar Ends Here
+**==================================================================*/
