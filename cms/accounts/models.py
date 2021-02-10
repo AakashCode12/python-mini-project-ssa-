@@ -1,19 +1,24 @@
 from django.db import models
-# Models Starts here 
+# Models Starts here
+
+
 class Category (models.Model):
     category_name = models.CharField(max_length=50, default="")
+
     def __str__(self):
         return self.category_name
 
 
 class Language (models.Model):
     language_name = models.CharField(max_length=50, default="")
+
     def __str__(self):
         return self.language_name
 
 
 class Artist (models.Model):
     name = models.CharField(max_length=50, default="")
+
     def __str__(self):
         return self.name
 
@@ -27,6 +32,8 @@ class Song (models.Model):
         Artist, on_delete=models.CASCADE, default="")
     language = models.ForeignKey(
         Language, on_delete=models.CASCADE, default="")
-    on_trending = models.BooleanField(default=True)
+    trending = models.BooleanField(default=True)
+    banner = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name

@@ -8,6 +8,10 @@ Home page
 {% block cssLinks %}{% endblock %}
 
 {% block body %}
+<h1>Banner song: {{song_banner.name}}</h1>
+<br>
+Trending Songs
+<br>
 {% for song in all_songs %}
 <a href="/songsPlay/{{song.pk}}">{{song.name}}</a>
 {% endfor %}

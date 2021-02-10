@@ -4,10 +4,14 @@ from .models import Song, Artist, Category, Language
 
 
 def index(request):
-    all_songs = Song.objects.all()
+    all_songs = Song.objects.filter(trending=True)
+    song_banner = Song.objects.get(banner=True)
+
     context = {
-        'all_songs': all_songs
+        'all_songs': all_songs,
+        'song_banner':song_banner,
     }
+
     return render(request, 'index.html', context)
 
 
