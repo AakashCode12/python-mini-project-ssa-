@@ -9,4 +9,6 @@ urlpatterns = [
     path('allsongs/', views.allsongs, name="allsongs"),
     path('songsPlay/<int:myid>/', views.songsPlay, name='songsPlay'),
 
+    # todo form ke path
+    path("searchSong", views.searchSong, name='searchSong'),
 ]

@@ -29,3 +29,16 @@ def allsongs(request):
 def songsPlay(request, myid):
     song = Song.objects.filter(pk=myid)
     return render(request, 'play_song.html', {'song': song[0]})
+
+
+def searchSong(request):
+    if request.method == 'POST':
+        query = request.POST.get('name', '')
+        all_songs_name = Song.objects.filter(
+            name__icontains=query)
+        context = {
+            'all_songs_name': all_songs_name,
+            'query': query
+        }
+
+    return render(request, "search_result.html", context)
