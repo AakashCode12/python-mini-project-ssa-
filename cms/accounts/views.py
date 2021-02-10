@@ -33,12 +33,13 @@ def songsPlay(request, myid):
 
 def searchSong(request):
     if request.method == 'POST':
-        query = request.POST.get('name', '')
+        query = request.POST.get('query', '')
         all_songs_name = Song.objects.filter(
             name__icontains=query)
         context = {
             'all_songs_name': all_songs_name,
-            'query': query
+            'query': query,
         }
+        return render(request, "search_result.html", context)
 
     return render(request, "search_result.html", context)
