@@ -24,3 +24,8 @@ def albums(request):
 def allsongs(request):
     context = {}
     return render(request, 'all_songs.html', context)
+
+
+def songsPlay(request, myid):
+    song = Song.objects.filter(pk=myid)
+    return render(request, 'play_song.html', {'song': song[0]})

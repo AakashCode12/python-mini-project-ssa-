@@ -8,6 +8,9 @@ Home page
 {% block cssLinks %}{% endblock %}
 
 {% block body %}
+{% for song in all_songs %}
+<a href="/songsPlay/{{song.pk}}">{{song.name}}</a>
+{% endfor %}
 {% endblock %}
 
 {% block jsLinks %}
