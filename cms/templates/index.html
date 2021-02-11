@@ -25,7 +25,7 @@ Home page
                     <h4 class="mt-2" style="color:white;">The Best music for you.</h4>
                     <a href="https://drive.google.com/file/d/1s0fR01gzzSZWUYPv0AUNO_x1s8xRQ6Es/view?usp=sharing"
                         target="_blank">
-                        <button class="mt-5" id="commonbuttons"><b>Listen Here</b></button></a>
+                        <button class="mt-3" id="commonbuttons"><b>Listen Here</b></button></a>
                 </div>
             </div>
         </div>
@@ -35,44 +35,59 @@ Home page
 <!--todo waves starts here-->
 <div class="outer_box_for_waves">
     <section id="wavesbelownavbar">
-        <img src="https://res.cloudinary.com/dnv3ztqf1/image/upload/v1605866350/Images%20for%20UNSCRIPT%20ROOKIE/logos/upperwave_dizfuw.svg"
+        <img id="waveanimate"
+            src="https://res.cloudinary.com/dnv3ztqf1/image/upload/v1605866350/Images%20for%20UNSCRIPT%20ROOKIE/logos/upperwave_dizfuw.svg"
             alt="bottom waves" />
     </section>
 </div>
 <!--todo waves ends here-->
 <!--todo Trending songs starts here-->
-<div class="container">
+<div class="container mb-5">
     <div class="title">
-        <h1 class="title-main text-center my-2 mb-5" style="color:black;"><b>Trending Songs</b></h1>
+        <h1 class="title-main text-center mb-5" style="color:black;"><b>Trending Songs</b></h1>
     </div>
     <div class="toptrend">
         <div class="row">
             {% for song in top_three_songs %}
             <div class="col-md-4">
-                <div class="card hover-shadow">
-                    <img src="{% static 'img/placeholder.jpg' %}" width="100%" alt="placeholder image for album">
-                    <div class="card-body">
-                        <h6 class="m-2 text-center">{{song.name}}</h6>
+                <a href="/songsPlay/{{song.pk}}" style="text-decoration: none; color: black;">
+                    <div class="card hover-shadow">
+                        <img src="{% static 'img/placeholder.jpg' %}" width="100%" alt="placeholder image for album">
+                        <div class="card-body">
+                            <h5 class="m-2 text-center remove-underline">{{song.name}}</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor%}
         </div>
     </div>
 </div>
-
 <!--todo Trending songs Ends here-->
 
+<!--todo Artists starts here-->
+<div class="background-black" style="background-color: black;">
+    <div class="container">
+        <div class="title"><br><br>
+            <h1 class="title-main text-center" style="color:white;"><b>Our Artists</b></h1>
+            <br><br>
+        </div>
+        <div class="row">
+            {% for artist in front_page_artists %}
+            <div class="col-md-3 my-3 text-center">
+                <div class="top">
+                    <img src="{% static 'svg/artists.svg' %}" alt="artists">
+                </div>
+                <div class="bottom">
+                    <h5 class="text-center my-4" style="color:white;"><b>{{artist.name}}</b></h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--todo Artists ends here-->
 
-
-
-<h1>Banner song: {{song_banner.name}}</h1>
-<br>
-Trending Songs
-<br>
-{% for song in all_songs %}
-<a href="/songsPlay/{{song.pk}}">{{song.name}}</a>
-{% endfor %}
 {% endblock %}
 
 {% block jsLinks %}
