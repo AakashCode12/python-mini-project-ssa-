@@ -21,3 +21,11 @@
   text-decoration: none;
   color: black;
 }
+
+.hover-effect-zoom {
+  transition: 0.1s ease-out;
+}
+
+.hover-effect-zoom:hover {
+  opacity: 0.9;
+}
