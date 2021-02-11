@@ -1,0 +1,25 @@
+#right_below_navbar_svg img {
+  animation-name: right-left;
+  animation-duration: 4s;
+  position: relative;
+}
+
+@keyframes right-left {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    left: -50px;
+    top: 0px;
+  }
+  75% {
+    left: 50px;
+    top: 0px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}

@@ -17,3 +17,7 @@
 .hover-shadow:hover {
   box-shadow: 0 0 15px 0 rgba(100, 100, 100, 0.26);
 }
+.remove-underline:active {
+  text-decoration: none;
+  color: black;
+}

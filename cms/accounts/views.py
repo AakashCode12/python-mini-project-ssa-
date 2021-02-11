@@ -11,13 +11,13 @@ def index(request):
     for i in range(3):
         top_three.append(all_trending_songs[i])
 
-    print(top_three)
+    front_page_artists = Artist.objects.filter(front_page=True)
 
     context = {
         'all_songs': all_trending_songs,
         'song_banner': song_banner,
         'top_three_songs': top_three,
-
+        'front_page_artists': front_page_artists,
     }
 
     return render(request, 'index.html', context)
