@@ -1,15 +1,23 @@
 
 from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
 from .models import Song, Artist, Category, Language
+import math
 
 
 def index(request):
-    all_songs = Song.objects.filter(trending=True)
+    all_trending_songs = Song.objects.filter(trending=True)
     song_banner = Song.objects.get(banner=True)
+    top_three = []
+    for i in range(3):
+        top_three.append(all_trending_songs[i])
+
+    print(top_three)
 
     context = {
-        'all_songs': all_songs,
-        'song_banner':song_banner,
+        'all_songs': all_trending_songs,
+        'song_banner': song_banner,
+        'top_three_songs': top_three,
+
     }
 
     return render(request, 'index.html', context)

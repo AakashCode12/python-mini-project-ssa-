@@ -16,8 +16,10 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static '/css/common.css' %}">
     <link rel="stylesheet" href="{% static '/css/base.css' %}">
-    <link rel="stylesheet" href="{% static '/css/button.css' %}">
+    <link rel="stylesheet" href="{% static '/css/buttons.css' %}">
     <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animations.css' %}">
+
 
     {% block cssLinks %}{% endblock %}
 
@@ -29,7 +31,7 @@
         <div class="container">
             <a class="navbar-brand" href="/">
                 <section id="leftlogo">
-                    <img src="{% static '/favicon/favicon.png' %}" width="100%" class="d-inline-block align-top"
+                    <img src="{% static '/svg/banner-navbar.svg' %}" width="100%" class="d-inline-block align-top"
                         loading="lazy" alt="aakash CMS of songs" />
                 </section>
             </a>
@@ -53,6 +55,14 @@
                     <li class="link-background">
                         <a href="/allsongs" class="nav-link left">Songs</a>
                     </li>
+                    <!-- <li class="link-background">
+                        <form class="searchkabox" method="POST" action="/searchSong" class="form-inline">
+                            {% csrf_token %}
+                            <input id="search" name="query" class="form-control mr-sm-2" type="search"
+                                placeholder="Search" aria-label="Search">
+                            <button id="commonbutton" class="btn  my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </li> -->
                 </ul>
             </div>
             <!------>
@@ -60,10 +70,7 @@
     </nav>
     <!--todo navbar ends here-->
     {% block body %}{% endblock %}
-    <form class="searchkabox" method="POST" action="/searchSong">
-        {% csrf_token %}
-        <input type="text" name="query" placeholder="Search Song">
-    </form>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

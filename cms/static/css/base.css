@@ -67,3 +67,63 @@ a.highlight {
 /**================================================================
 * Navbar Ends Here
 **==================================================================*/
+
+/** the written stuff below navbar*/
+#right_below_navbar_svg img {
+  width: 100%;
+  height: 500px;
+  padding: 2% 0% 2% 0%;
+}
+.box-for-names {
+  margin: 10% 3% 10% 3%;
+  padding: 5%;
+}
+.below-navbar-container {
+  background: -webkit-linear-gradient(right, #000000, #383838);
+}
+
+/*
+
+    todo below the navbar right side svg
+*/
+/*---------------------------------------
+*the title in banner starts here
+------------------------------------------*/
+
+#hello-world h1 {
+  color: #fff;
+  font-size: 70px;
+}
+#hello-world h4 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 600px) {
+  #hello-world h1 {
+    color: #fff;
+    font-size: 50px;
+  }
+
+  #hello-world h4 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+/*---------------------------------------
+*the title in banner ends here
+------------------------------------------*/
+/*******************************************
+*waves starts here
+*********************************************/
+
+.outer_box_for_waves {
+  overflow: hidden;
+  color: aliceblue;
+  background: -webkit-linear-gradient(right, #000000, #383838);
+}
+/*******************************************
+*waves ends here
+*********************************************/
