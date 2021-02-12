@@ -52,7 +52,7 @@ Home page
             <div class="col-md-4">
                 <a href="/songsPlay/{{song.pk}}" style="text-decoration: none; color: black;">
                     <div class="card hover-shadow">
-                        <img src="{% static 'img/placeholder.jpg' %}" width="100%" alt="placeholder image for album">
+                        <img src="/media/{{song.song_image}}" width="100%" alt="placeholder image for album">
                         <div class="card-body">
                             <h5 class="m-2 text-center remove-underline">{{song.name}}</h5>
                         </div>
