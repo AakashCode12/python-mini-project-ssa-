@@ -1,1 +1,22 @@
-albums
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+All Albums
+{% endblock %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static '/css/album.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="title"><br><br>
+        <h1 class="title-main text-center" style="color:rgb(0, 0, 0);"><b>All Albums</b></h1>
+        <br><br>
+    </div>
+</div>
+{% endblock %}
+
+{% block jsLinks %}
+{% endblock %}
