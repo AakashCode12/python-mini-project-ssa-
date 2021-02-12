@@ -1,3 +1,16 @@
+<form class="searchkabox" method="POST" action="/searchSong" class="form-inline">
+    {% csrf_token %}
+    <input id="search" name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button id="commonbutton" class="btn  my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+
+<br>
+{% if search_mode_on %}
+Search result for "{{query}}"
+{% endif %}
+<br>
+
 {% for song in all_songs_name %}
 <a href="/songsPlay/{{song.pk}}">{{song.name}}</a>
 {% endfor %}

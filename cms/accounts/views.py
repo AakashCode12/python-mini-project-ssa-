@@ -52,7 +52,9 @@ def searchSong(request):
         context = {
             'all_songs_name': all_songs_name,
             'query': query,
+            'search_mode_on':True
         }
         return render(request, "search_result.html", context)
-
+    else:
+        context = {'search_mode_on': False}
     return render(request, "search_result.html", context)
