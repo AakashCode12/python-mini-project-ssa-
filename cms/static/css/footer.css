@@ -10,6 +10,13 @@
   color: white;
   transition: color 0.2s;
 }
+.footer .location ul {
+  list-style-type: none;
+}
+.footer .location li a {
+  color: white;
+  transition: color 0.2s;
+}
 .footer .links li a:hover {
   text-decoration: none;
   color: #4180cb;
@@ -17,15 +24,19 @@
 .footer .about-company i {
   font-size: 25px;
 }
-.footer .about-company a {
+.footer .location a {
   color: white;
   transition: color 0.2s;
+  text-decoration: none;
 }
-.footer .about-company a:hover {
+.footer .location a:hover {
   color: #4180cb;
 }
-.footer .location i {
-  font-size: 18px;
+.footer .location a.github:hover {
+  color: #38393a;
+}
+.footer .location a.twitter:hover {
+  color: #7cc5f0;
 }
 .footer .copyright p {
   border-top: 1px solid rgba(255, 255, 255, 0.1);

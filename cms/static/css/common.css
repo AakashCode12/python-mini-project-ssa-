@@ -29,3 +29,7 @@
 .hover-effect-zoom:hover {
   opacity: 0.9;
 }
+
+.card {
+  border-radius: 5px;
+}
