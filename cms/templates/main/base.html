@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{% static '/css/buttons.css' %}">
     <link rel="stylesheet" href="{% static '/css/forms.css' %}">
     <link rel="stylesheet" href="{% static '/css/animations.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+
 
 
     {% block cssLinks %}{% endblock %}
@@ -71,6 +73,42 @@
     <!--todo navbar ends here-->
     {% block body %}{% endblock %}
 
+    <!--todo Footer starts here -->
+    <div class="mt-5 pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 about-company">
+                    <h2>Xavious</h2>
+                    <p class="pr-5 text-white-50">This is a Mini Project for Django framework. Its Made by Aakash
+                        Yadav, Shreya Sapale and Snehal Tagalpallewar.</p>
+                    <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i
+                                class="fa fa-linkedin-square"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 links">
+                    <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                    <ul class="m-0 p-0">
+                        <li> <a href="/">Home</a></li>
+                        <li> <a href="/albums">Albums</a></li>
+                        <li><a href="/artists">Artists</a></li>
+                        <li> <a href="/allsongs">Songs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 location">
+                    <h4 class="mt-lg-0 mt-sm-4">Contact</h4>
+                    <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+                    <p class="mb-0">(541) 754-3010</p>
+                    <p>info@hsdf.com</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col copyright text-center">
+                    <p class=""><small class="text-white-50">© 2021 All Rights
+                            Reserved.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--todo Footer Ends here-->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

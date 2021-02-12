@@ -6,20 +6,21 @@ import math
 
 def index(request):
     all_trending_songs = Song.objects.filter(trending=True)
-    song_banner = Song.objects.get(banner=True)
     top_three = []
-    for i in range(3):
-        top_three.append(all_trending_songs[i])
+    if len(all_trending_songs) >= 3:
+        for i in range(3):
+            top_three.append(all_trending_songs[i])
+    else:
+        for i in range(len(all_trending_songs)):
+            top_three.append(all_trending_songs[i])
 
     front_page_artists = Artist.objects.filter(front_page=True)
 
     context = {
         'all_songs': all_trending_songs,
-        'song_banner': song_banner,
         'top_three_songs': top_three,
         'front_page_artists': front_page_artists,
     }
-
     return render(request, 'index.html', context)
 
 
