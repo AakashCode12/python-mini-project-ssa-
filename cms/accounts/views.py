@@ -24,18 +24,27 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def artists(request):
-    context = {}
-    return render(request, 'artist.html', context)
-
-
 def albums(request):
-    context = {}
+    all_albums = Album.objects.all()
+    context = {
+        'all_albums': all_albums,
+    }
     return render(request, 'album.html', context)
 
 
+def artists(request):
+    artists = Artist.objects.all()
+    context = {
+        'artists': artists,
+    }
+    return render(request, 'artist.html', context)
+
+
 def allsongs(request):
-    context = {}
+    songs = Song.objects.all()
+    context = {
+        'songs': songs,
+    }
     return render(request, 'all_songs.html', context)
 
 

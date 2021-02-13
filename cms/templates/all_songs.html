@@ -1,1 +1,40 @@
-allsongs
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+All Songs
+{% endblock %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static '/css/album.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="title"><br><br>
+        <h1 class="title-main text-center" style="color:rgb(0, 0, 0);"><b>All Songs</b></h1>
+        <br><br>
+    </div>
+    <div class="box-outer-albums">
+        <div class="" style="margin-left: 3%;margin-right: 3%;">
+            <ul class="list-group mb-5  marginlr">
+                {% for song in songs %}
+                <a href="/songsPlay/{{song.pk}}" style="text-decoration: none;">
+                    <li class="list-group-item list-group-item-action list-group-item-dark">
+                        <h3>{{song.name}}</h3>
+                    </li>
+                </a>
+                {% empty %}
+                <li class="list-group-item  list-group-item-dark">
+                    Sorry :( ! There are no items related to your Search
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block jsLinks %}
+{% endblock %}

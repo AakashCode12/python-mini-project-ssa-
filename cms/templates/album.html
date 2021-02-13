@@ -15,6 +15,18 @@ All Albums
         <h1 class="title-main text-center" style="color:rgb(0, 0, 0);"><b>All Albums</b></h1>
         <br><br>
     </div>
+    <div class="box-outer-albums">
+        <div class="card-group">
+            {% for album in all_albums %}
+            <div class="card mb-5 mx-2   hover-shadow-2">
+                <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{album.album_name}}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
 
