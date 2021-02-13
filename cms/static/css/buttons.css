@@ -19,7 +19,6 @@
   width: 200px;
   border-block-style: none;
   border: none;
-  transform: scale(1.05);
 }
 .commonbuttons {
   padding: 2%;
@@ -42,5 +41,4 @@
   width: 200px;
   border-block-style: none;
   border: none;
-  transform: scale(1.05);
 }
