@@ -5,7 +5,7 @@ from django.db import models
 class Album (models.Model):
     album_name = models.CharField(max_length=50, default="")
     album_image = models.ImageField(
-        upload_to="category-images/", default="", blank=True)
+        upload_to="album-images/", default="", blank=True)
 
     def __str__(self):
         return self.album_name
