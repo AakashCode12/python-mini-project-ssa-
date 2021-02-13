@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
-from .models import Song, Artist, Category, Language
+from .models import Song, Artist, Album, Language
 import math
 
 
@@ -52,7 +52,7 @@ def searchSong(request):
         context = {
             'all_songs_name': all_songs_name,
             'query': query,
-            'search_mode_on':True
+            'search_mode_on': True
         }
         return render(request, "search_result.html", context)
     else:

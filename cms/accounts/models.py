@@ -2,13 +2,13 @@ from django.db import models
 # Models Starts here
 
 
-class Category (models.Model):
-    category_name = models.CharField(max_length=50, default="")
-    category_image = models.ImageField(
+class Album (models.Model):
+    album_name = models.CharField(max_length=50, default="")
+    album_image = models.ImageField(
         upload_to="category-images/", default="", blank=True)
 
     def __str__(self):
-        return self.category_name
+        return self.album_name
 
 
 class Language (models.Model):
@@ -32,8 +32,8 @@ class Artist (models.Model):
 class Song (models.Model):
     name = models.CharField(max_length=50, default="")
     song = models.FileField(upload_to='songs/')
-    category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, default="")
+    Album = models.ForeignKey(
+        Album, on_delete=models.CASCADE, default="")
     artist = models.ForeignKey(
         Artist, on_delete=models.CASCADE, default="")
     language = models.ForeignKey(
