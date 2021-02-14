@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+*::selection {
+  color: rgb(255, 255, 255);
+  background-color: #1d58b198;
+}
+@media only screen and (max-width: 600px) {
+  .vanish-mobile {
+    display: none;
+  }
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 0 15px 0 rgba(100, 100, 100, 0.26);
+}
+.hover-shadow-2 {
+  box-shadow: 0 0px 15px 0 rgba(100, 100, 100, 0.26);
+}
+.hover-shadow-2:hover {
+  box-shadow: 15px 15px 15px 15px rgba(100, 100, 100, 0.26);
+}
+.remove-underline:active {
+  text-decoration: none;
+  color: black;
+}
+
+.hover-effect-zoom {
+  transition: 0.1s ease-out;
+}
+
+.hover-effect-zoom:hover {
+  opacity: 0.9;
+}
+
+.card {
+  border-radius: 5px;
+}

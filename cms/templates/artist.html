@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+All Albums
+{% endblock %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static '/css/album.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="title"><br><br>
+        <h1 class="title-main text-center" style="color:rgb(0, 0, 0);"><b>All Artists</b></h1>
+        <br><br>
+    </div>
+    <div class="box-outer-albums">
+        <div class="card-group">
+            {% for artist in artists %}
+            <div class="card mb-5  mx-2 hover-shadow-2">
+                <img class="card-img-top " src="/media/{{artist.artist_image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{artist.name}}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block jsLinks %}
+{% endblock %}

@@ -1,0 +1,43 @@
+.footer {
+  background: -webkit-linear-gradient(right, #000000, #383838);
+
+  color: white;
+}
+.footer .links ul {
+  list-style-type: none;
+}
+.footer .links li a {
+  color: white;
+  transition: color 0.2s;
+}
+.footer .location ul {
+  list-style-type: none;
+}
+.footer .location li a {
+  color: white;
+  transition: color 0.2s;
+}
+.footer .links li a:hover {
+  text-decoration: none;
+  color: #97989b;
+}
+.footer .about-company i {
+  font-size: 25px;
+}
+.footer .location a {
+  color: white;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.footer .location a:hover {
+  color: #4180cb;
+}
+.footer .location a.github:hover {
+  color: #38393a;
+}
+.footer .location a.twitter:hover {
+  color: #7cc5f0;
+}
+.footer .copyright p {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

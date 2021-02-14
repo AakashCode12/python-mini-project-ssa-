@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!--todo favicon-->
+    <link rel="shortcut icon" href="{% static '/favicon/favicon.png' %}">
+    <!--todo Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--todo CSS and  Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/common.css' %}">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+    {% block cssLinks %}{% endblock %}
+
+</head>
+
+<body>
+    <!--todo navbar starts here-->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <section id="leftlogo">
+                    <img src="{% static '/svg/banner-navbar.svg' %}" width="100%" class="d-inline-block align-top"
+                        loading="lazy" alt=" CMS of songs" />
+                </section>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span id="navbar-toggler-icon">≡</span>
+            </button>
+            <!--contents---->
+            <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="link-background">
+                        <a href="/" class="nav-link left">Home</a>
+                    </li>
+                    <li class="link-background">
+                        <a href="/albums" class="nav-link left">Albums</a>
+                    </li>
+                    <li class="link-background">
+                        <a href="/artists" class="nav-link left">Artists</a>
+                    </li>
+
+                    <li class="link-background">
+                        <a href="/allsongs" class="nav-link left">Songs</a>
+                    </li>
+                    <li class="link-background">
+                        <a href="/searchSong" class="nav-link left">Search Song</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!------>
+        </div>
+    </nav>
+    <!--todo navbar ends here-->
+    {% block body %}{% endblock %}
+
+
+    <!--todo Footer starts here -->
+    <div class=" pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 about-company">
+                    <h2>About Us</h2>
+                    <p class="pr-5 text-white-50">This is a Mini Project for Django framework. Its Made by Aakash
+                        Yadav, Shreya Sapale and Snehal Tagalpallewar.</p>
+
+                </div>
+                <div class="col-lg-3 col-xs-12 links">
+                    <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                    <ul class="m-0 p-0">
+                        <li> <a href="/">Home</a></li>
+                        <li> <a href="/albums">Albums</a></li>
+                        <li><a href="/artists">Artists</a></li>
+                        <li> <a href="/allsongs">Songs</a></li>
+                        <li> <a href="/searchSong">Search Song</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 location">
+                    <h4 class="mt-lg-0 mt-sm-4">Contact</h4>
+                    <p>Computer Department | Fr.C.R.I.T | Mumbai University | </p>
+                    <p class="mt-4">
+                        <a class="twitter" href="https://twitter.com/Aakashv0007" target="_blank">
+                            <i class="fa fa-3x fa-twitter mr-3"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aakash-yadav-a30627190/" target="_blank">
+                            <i class="fa fa-3x fa-linkedin mr-3"></i>
+                        </a>
+                        <a class="github" href="https://github.com/AakashCode12" target="_blank">
+                            <i class="fa fa-3x fa-github mr-3"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col copyright text-center">
+
+                    <p class=""><small class="text-white-50 pt-2">© 2021 All Rights
+                            Reserved.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--todo Footer Ends here-->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    {% block jsLinks %}{% endblock %}
+
+</body>
+
+</html>

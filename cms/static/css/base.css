@@ -1,0 +1,129 @@
+/**================================================================
+*?? Navbar Starts Here
+**==================================================================*/
+.navbar-nav li {
+  padding: 0 10px;
+}
+.navbar-nav li a {
+  text-align: right;
+  color: #fff;
+  font-size: large;
+  font-weight: 600;
+}
+.navbar-nav li a:hover {
+  text-align: right;
+  color: rgb(189, 189, 189);
+  font-size: large;
+  font-weight: 600;
+}
+.navbar {
+  background: -webkit-linear-gradient(right, #000000, #383838);
+}
+#leftlogo img {
+  width: 63.48px;
+  height: 63.48px;
+}
+@media only screen and (max-width: 600px) {
+  #leftlogo img {
+    width: 52.9px;
+    height: 52.9px;
+  }
+}
+.navbar-toggler {
+  background-color: #000000 !important;
+  border-color: white !important;
+}
+#navbar-toggler-icon {
+  color: rgb(255, 255, 255);
+  border-color: white !important;
+}
+.col-sm-2 svg {
+  align-items: center;
+}
+/**-THE UNDERLINE EFFECT OF LINK of particular page-*/
+a.left {
+  position: relative;
+}
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+a.left:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+/* **for the link with highlight for he particular page*/
+a.highlight {
+  color: white !important;
+}
+
+/**================================================================
+* Navbar Ends Here
+**==================================================================*/
+
+/** the written stuff below navbar*/
+#right_below_navbar_svg img {
+  width: 100%;
+  height: 500px;
+  padding: 2% 0% 2% 0%;
+}
+.box-for-names {
+  margin: 10% 3% 10% 3%;
+  padding: 5%;
+}
+.below-navbar-container {
+  background: -webkit-linear-gradient(right, #000000, #383838);
+}
+
+/*
+
+    todo below the navbar right side svg
+*/
+/*---------------------------------------
+*the title in banner starts here
+------------------------------------------*/
+
+#hello-world h1 {
+  color: #fff;
+  font-size: 70px;
+}
+#hello-world h4 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 600px) {
+  #hello-world h1 {
+    color: #fff;
+    font-size: 50px;
+  }
+
+  #hello-world h4 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+/*---------------------------------------
+*the title in banner ends here
+------------------------------------------*/
+/*******************************************
+*waves starts here
+*********************************************/
+
+.outer_box_for_waves {
+  overflow: hidden;
+  color: aliceblue;
+  background: -webkit-linear-gradient(right, #000000, #383838);
+}
+/*******************************************
+*waves ends here
+*********************************************/

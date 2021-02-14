@@ -1,0 +1,32 @@
+.title-main {
+  color: white;
+  font-size: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+  .title-main {
+    color: white;
+    font-size: 30px;
+  }
+  .vanish-mobile {
+    display: none;
+  }
+}
+
+/*
+todo carousel Indictors
+*/
+
+/*
+todo carousel Indictors
+*/
+
+/***Artist******/
+
+.artist-image {
+  border-radius: 50%;
+  border: 2px;
+  border-color: #ffffff;
+  border-style: solid;
+  height: 250px;
+}

@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{song.name}} | Song Page
+{% endblock %}
+
+{% block cssLinks %}
+<link rel="stylesheet" href="{% static '/css/album.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="title"><br><br>
+        <h1 class="title-main text-center" style="color:rgb(0, 0, 0);"><b>{{song.name}}</b></h1>
+        <br><br>
+    </div>
+    <div class="box-outer-playsongs">
+        <!-- <div width="90%">
+            <img src="/media/{{song.Album.album_image}}" alt="">
+        </div> -->
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="/media/{{song.song}}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</div>
+{% endblock %}
+
+{% block jsLinks %}
+{% endblock %}
