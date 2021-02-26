@@ -18,12 +18,14 @@ All Albums
     <div class="box-outer-albums">
         <div class="card-group">
             {% for album in all_albums %}
-            <div class="card mb-5 mx-2   hover-shadow-2">
-                <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{album.album_name}}</h5>
+            <a href="/openAlbum/{{album.pk}}">
+                <div class="card mb-5 mx-2   hover-shadow-2">
+                    <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{album.album_name}}</h5>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>

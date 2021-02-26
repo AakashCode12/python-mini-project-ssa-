@@ -24,6 +24,18 @@ class Artist (models.Model):
     name = models.CharField(max_length=50, default="")
     front_page = models.BooleanField(default=False)
     artist_image = models.ImageField(upload_to="artist-images/", default="")
+    # monthly_listeners = models.IntegerField()
+    # no_of_followers = models.IntegerField()
+    # description_artist = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Genre (models.Model):
+    genre_name = models.CharField(max_length=50, default="")
+    genre_image = models.ImageField(upload_to="genre-images/", default="")
+    related_stuff = models.TextField()
 
     def __str__(self):
         return self.name
@@ -39,6 +51,9 @@ class Song (models.Model):
     language = models.ForeignKey(
         Language, on_delete=models.CASCADE, default="")
     song_image = models.ImageField(upload_to="song-images/", default="")
+    # genre = models.ForeignKey(
+    #     Genre, on_delete=models.CASCADE, default="")
+
     trending = models.BooleanField(default=True)
     # banner = models.BooleanField(default=False)
 

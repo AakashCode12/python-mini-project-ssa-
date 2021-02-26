@@ -39,12 +39,14 @@ def artists(request):
     }
     return render(request, 'artist.html', context)
 
+
 def artist1(request):
     all_albums = Album.objects.all()
     context = {
         'all_albums': all_albums,
     }
-    return render(request, 'artist_profile.html',context)
+    return render(request, 'artist_profile.html', context)
+
 
 def allsongs(request):
     songs = Song.objects.all()
@@ -52,6 +54,15 @@ def allsongs(request):
         'songs': songs,
     }
     return render(request, 'all_songs.html', context)
+
+
+def openAlbum(request, albumid):
+    # album = Album.objects.filter(pk=albumid)
+    songs = Song.objects.filter(Album__pk=albumid)
+    context = {
+        'songs': songs,
+    }
+    return render(request, 'albumsongs.html', context)
 
 
 def songsPlay(request, myid):
