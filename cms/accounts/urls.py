@@ -7,6 +7,8 @@ urlpatterns = [
     path('artists/', views.artists, name="artists"),
     path('albums/', views.albums, name="albums"),
     path('allsongs/', views.allsongs, name="allsongs"),
+    path('artist1/', views.artist1, name="artist1"),
+
 
     path('songsPlay/<int:myid>/', views.songsPlay, name='songsPlay'),
 

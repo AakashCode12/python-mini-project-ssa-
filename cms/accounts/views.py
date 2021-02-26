@@ -39,6 +39,12 @@ def artists(request):
     }
     return render(request, 'artist.html', context)
 
+def artist1(request):
+    all_albums = Album.objects.all()
+    context = {
+        'all_albums': all_albums,
+    }
+    return render(request, 'artist_profile.html',context)
 
 def allsongs(request):
     songs = Song.objects.all()

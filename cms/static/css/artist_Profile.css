@@ -1,0 +1,19 @@
+/* .image-container {
+  position: relative;
+  height: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+} */
+
+.below-navbar{
+  /* marg */
+  /* margin: 50px; */
+}
+
+.box-search-background {
+  background: -webkit-linear-gradient(right, #000000, #383838);
+}
+.marginlr {
+  padding-left: 15%;
+  padding-right: 15%;
+}
