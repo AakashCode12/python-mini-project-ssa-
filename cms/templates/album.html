@@ -16,9 +16,9 @@ All Albums
         <br><br>
     </div>
     <div class="box-outer-albums">
-        <div class="card-group">
+        <div class="card-group row">
             {% for album in all_albums %}
-            <a href="/openAlbum/{{album.pk}}">
+            <a href="/openAlbum/{{album.pk}}" class="col" style="text-decoration: none;">
                 <div class="card mb-5 mx-2   hover-shadow-2">
                     <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
                     <div class="card-body">
