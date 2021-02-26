@@ -18,12 +18,14 @@ All Albums
     <div class="box-outer-albums">
         <div class="card-group">
             {% for artist in artists %}
-            <div class="card mb-5  mx-2 hover-shadow-2">
-                <img class="card-img-top " src="/media/{{artist.artist_image}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{artist.name}}</h5>
+            <a href="/artistPage/{{artist.pk}}" class="col" style="text-decoration: none;">
+                <div class="card mb-5  mx-2 hover-shadow-2">
+                    <img class="card-img-top " src="/media/{{artist.artist_image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{artist.name}}</h5>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>

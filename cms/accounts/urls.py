@@ -10,7 +10,7 @@ urlpatterns = [
     path('artist1/', views.artist1, name="artist1"),
     path('openAlbum/<int:albumid>/', views.openAlbum, name='openAlbum'),
     path('songsPlay/<int:myid>/', views.songsPlay, name='songsPlay'),
-    
+    path('artistPage/<int:artistid>/', views.openArtist, name='songsPlay'),
 
     # todo form ke path
     path("searchSong", views.searchSong, name='searchSong'),
