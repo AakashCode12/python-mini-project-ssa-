@@ -29,4 +29,9 @@ todo carousel Indictors
   border-color: #ffffff;
   border-style: solid;
   height: 250px;
+  transition: all 0.1s ease-out;
+}
+
+.artist-image:hover {
+  box-shadow: 0 0 10px 0 rgb(255, 255, 255);
 }
