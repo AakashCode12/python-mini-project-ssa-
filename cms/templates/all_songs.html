@@ -7,14 +7,45 @@ All Songs
 
 {% block cssLinks %}
 <link rel="stylesheet" href="{% static '/css/album.css' %}">
+
+<link rel="stylesheet" href="{% static 'for-card-bsStudio/bootstrap.min.css' %}">
+
 {% endblock %}
 
 {% block body %}
 <div class="container">
-    <div class="title"><br><br>
-        <h1 class="title-main text-center" style="color:rgb(0, 0, 0);"><b>All Songs</b></h1>
-        <br><br>
+
+    <div class="title">
+        <h1 class="title-main text-center mt-5" style="color:rgb(0, 0, 0);"><b>All Songs</b></h1>
     </div>
+    <main class="page projets-page">
+        <section class="portfolio-block projects compact-grid">
+
+            <div class="row no-gutters">
+                {% for song in songs %}
+
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a href="/songsPlay/{{song.pk}}">
+                        <img class="img-fluid image" src="/media/{{song.song_image}}">
+                        <span class="description">
+                            <span class="description-heading">{{song.name}}</span>
+                            <span class="description-body">{{song.album}}</span>
+                            <span class="description-body">{{song.artist}}</span>
+
+                        </span>
+                    </a>
+                </div>
+                {% empty %}
+                <li class="list-group-item  list-group-item-dark">
+                    Sorry :( ! There are no items related to your Search
+                </li>
+                {% endfor %}
+            </div>
+
+        </section>
+    </main>
+
+    <!-- 
     <div class="box-outer-albums">
         <div class="" style="margin-left: 3%;margin-right: 3%;">
             <ul class="list-group mb-5  marginlr">
@@ -33,8 +64,13 @@ All Songs
 
         </div>
     </div>
+ -->
 </div>
 {% endblock %}
-
 {% block jsLinks %}
+<link rel="stylesheet" href="{% static 'for-card-bsStudio/bootstrap.min.js' %}">
+<link rel="stylesheet" href="{% static 'for-card-bsStudio/jquery.min.js' %}">
+
+<link rel="stylesheet" href="{% static 'for-card-bsStudio/theme.js' %}">
+
 {% endblock %}

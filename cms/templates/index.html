@@ -74,14 +74,16 @@ Home page
         </div>
         <div class="row">
             {% for artist in front_page_artists %}
-            <div class="col-md my-3 text-center">
-                <div class="top text-center">
-                    <img src="/media/{{artist.artist_image}}" class="artist-image" alt=" artists">
+            <a href="/artistPage/{{artist.pk}}" class="col" style="text-decoration: none;">
+                <div class="col-md my-3 text-center">
+                    <div class="top text-center">
+                        <img src="/media/{{artist.artist_image}}" class="artist-image" alt=" artists">
+                    </div>
+                    <div class="bottom mb-3">
+                        <h5 class="text-center my-4" style="color:white;"><b>{{artist.name}}</b></h5>
+                    </div>
                 </div>
-                <div class="bottom mb-3">
-                    <h5 class="text-center my-4" style="color:white;"><b>{{artist.name}}</b></h5>
-                </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>
