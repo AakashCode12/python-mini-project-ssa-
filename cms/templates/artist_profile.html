@@ -1,79 +1,127 @@
-{% extends 'main/base.html' %} {% load static %} {% block title %} Artist Name
-{% endblock %} {% block cssLinks %}
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Artist Name
+{% endblock %}
+
+{% block cssLinks %}
 <link rel="stylesheet" href="{% static '/css/artist_profile.css' %}" />
-{% endblock %} {% block body %}
-
-
-<!-- <div class="container">
-  <div class="title">
-    <br /><br />
-    <h1 class="title-main text-center" style="color: rgb(0, 0, 0)">
-      <b>All Artists</b>
-    </h1>
-    <br /><br />
-  </div>
-  <div class="box-outer-albums">
-    <div class="card-group">
-      {% for artist in artists %}
-      <div class="card mb-5 mx-2 hover-shadow-2">
-        <img class="card-img-top" src="/media/{{artist.artist_image}}" alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">{{artist.name}}</h5>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div> -->
+{% endblock %}
+<!-- <img class="img-fluid" src="/media/{{artist.artist_image}}" alt="alternative" /> -->
+{% block body %}
 <div class="container">
-
-  <div class="title">
-    <center>
-
-      <br>
-      <br>
-      <h1>
-        {{artist.name}}
-      </h1>
-      <br>
-    </center>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 below-navbar">
-
-      <div class="image-container">
-        <!-- <img class="img-fluid" src="{% static '/img/placeholder.jpg' %}" alt="alternative" /> -->
-        <img class="img-fluid" src="/media/{{artist.artist_image}}" alt="alternative" />
+  <!--todo artist profile starts here -->
+  <div class="row my-5">
+    <div class="col-sm-8 text-center">
+      <img class="text-center" style="height:500px;" src=" /media/{{artist.artist_image}}" alt="{{artist.name}}">
+    </div>
+    <div class="col-sm-4">
+      <div class="artist-title">
+        <h1 class="text-center">{{artist.name}}</h1>
 
       </div>
+
+      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptatum autem minima
+        repudiandae ex
+        necessitatibus, nostrum voluptas obcaecati nisi quae velit error tempora dolores cupiditate. Veritatis
+        consequatur animi, repellat dolor quisquam consectetur qui. Asperiores, dolore? Assumenda consectetur voluptates
+        quaerat error! Deserunt aut ea, officiis non error illum architecto ad possimus.</p>
+      <div class="row mx-5 my-5">
+        <div class="col-sm-3">
+          <a href="https://github.com/AakashCode12" target="_blank"><i id="github" class="fa fa-3x fa-github"
+              aria-hidden="true"></i></a>
+        </div>
+        <div class="col-sm-3">
+          <a href="https://www.linkedin.com/in/aakash-yadav-a30627190/" target="_blank"><i id="linkedin"
+              class="fa fa-3x fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-sm-3">
+          <a href="https://www.instagram.com/aakash_igram/" target="_blank"><i id="instagram"
+              class="fa fa-3x fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-sm-3">
+          <a href="https://twitter.com/Aakashv0007" target="_blank"><i id="twitter" class="fa fa-3x fa-twitter"
+              aria-hidden="true"></i></a>
+        </div>
+        <style>
+          /*social media stuff on footer*/
+          #github {
+            color: #000000;
+            padding: 5% 0% 5% 0%;
+          }
+
+          #github:hover {
+            color: rgb(94, 94, 94);
+            transform: scale(1.1);
+          }
+
+          #linkedin {
+            color: #005f92;
+            padding: 5% 0% 5% 0%;
+          }
+
+          #linkedin:hover {
+            color: #98c6df;
+            transform: scale(1.1);
+          }
+
+          #instagram {
+            color: #fa9af2;
+            padding: 5% 0% 5% 0%;
+          }
+
+          #instagram:hover {
+            color: #e7e1e7;
+            transform: scale(1.1);
+          }
+
+          #twitter {
+            color: #2ebfeb;
+            padding: 5% 0% 5% 0%;
+          }
+
+          #twitter:hover {
+            color: #7bffde;
+            border: black;
+            transform: scale(1.1);
+          }
+        </style>
+      </div>
     </div>
+
   </div>
-  <br>
-  <center>
+  <!--todo artist profile Ends here -->
+
+
+
+
+  <div class="text-center">
     <h2>Some Albums of {{artist.name}} </h2>
-  </center>
-  <br>
+  </div>
+
   <!-- todo albums -->
   <div class="box-outer-albums">
     <div class="card-group row">
       {% for album in albums %}
-      <a href="/openAlbum/{{album.pk}}" class="col" style="text-decoration: none;">
-        <div class="card mb-5 mx-2   hover-shadow-2">
-          <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{album.album_name}}</h5>
+      <div class="col-sm-3">
+        <a href="/openAlbum/{{album.pk}}" class="col" style="text-decoration: none;">
+          <div class="card mb-5 mx-2   hover-shadow-2">
+            <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{album.album_name}}</h5>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
       {% empty %}
-    
-    <li class="list-group-item  list-group-item-dark">
-      Sorry, there are no albums from {{artist.name}}
-    </li>
-    {% endfor %}
+
+      <li class="list-group-item  list-group-item-dark">
+        Sorry, there are no albums from {{artist.name}}
+      </li>
+      {% endfor %}
+    </div>
   </div>
-</div>
 </div>
 
 {% endblock %} {% block jsLinks %} {% endblock %}

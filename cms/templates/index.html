@@ -7,6 +7,8 @@ Home page
 
 {% block cssLinks %}
 <link rel="stylesheet" href="{% static '/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'for-card-bsStudio/bootstrap.min.css' %}">
+
 {% endblock %}
 
 {% block body %}
@@ -25,7 +27,8 @@ Home page
                     <h4 class="mt-2" style="color:white;">The Best music for you.</h4>
                     <a href="https://drive.google.com/file/d/1s0fR01gzzSZWUYPv0AUNO_x1s8xRQ6Es/view?usp=sharing"
                         target="_blank">
-                        <button class="mt-3" id="commonbuttons"><b>Listen Here</b></button></a>
+                        <button class=" flex-row-reverse mt-3 px-5 text-center" id="commonbuttons"><b>Listen
+                                Here</b></button></a>
                 </div>
             </div>
         </div>
@@ -75,7 +78,7 @@ Home page
         <div class="row">
             {% for artist in front_page_artists %}
             <a href="/artistPage/{{artist.pk}}" class="col" style="text-decoration: none;">
-                <div class="col-md my-3 text-center zoom-on-hover">
+                <div class="col-md my-3 text-center item zoom-on-hover">
                     <div class="top text-center">
                         <img src="/media/{{artist.artist_image}}" class="artist-image" alt=" artists">
                     </div>
