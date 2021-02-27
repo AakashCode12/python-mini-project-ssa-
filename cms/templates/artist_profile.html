@@ -43,7 +43,9 @@
     <div class="col-md-8 below-navbar">
 
       <div class="image-container">
-        <img class="img-fluid" src="{% static '/img/placeholder.jpg' %}" alt="alternative" />
+        <!-- <img class="img-fluid" src="{% static '/img/placeholder.jpg' %}" alt="alternative" /> -->
+        <img class="img-fluid" src="/media/{{artist.artist_image}}" alt="alternative" />
+
       </div>
     </div>
   </div>
@@ -54,17 +56,24 @@
   <br>
   <!-- todo albums -->
   <div class="box-outer-albums">
-    <div class="card-group">
-      {% for album in all_albums %}
-      <div class="card mb-5 mx-3   hover-shadow-2">
-        <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{album.album_name}}</h5>
+    <div class="card-group row">
+      {% for album in albums %}
+      <a href="/openAlbum/{{album.pk}}" class="col" style="text-decoration: none;">
+        <div class="card mb-5 mx-2   hover-shadow-2">
+          <img class="card-img-top " src="/media/{{album.album_image}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{album.album_name}}</h5>
+          </div>
         </div>
-      </div>
-      {% endfor %}
-    </div>
+      </a>
+      {% empty %}
+    
+    <li class="list-group-item  list-group-item-dark">
+      Sorry, there are no albums from {{artist.name}}
+    </li>
+    {% endfor %}
   </div>
+</div>
 </div>
 
 {% endblock %} {% block jsLinks %} {% endblock %}
